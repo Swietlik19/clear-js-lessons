@@ -1,1 +1,1 @@
-Making lessons from the channel of Vladilen Minin
+Making lessons for clear JavaScript from the channel of Vladilen Minin

@@ -33,7 +33,7 @@ function _createModal(options) {
     <div class="modal-overlay" data-close="true">
       <div class="modal-window" style="width: ${options.width || DEFAULT_WIDTH}">
         <div class="modal-header">
-          <span class="modal-title">${options.title || 'Window'}</span>
+          <span class="modal-title" data-title>${options.title || 'Window'}</span>
           ${options.closable ? `<span class="modal-close" data-close="true">&times;</span>` : ''}
         </div>
         <div class="modal-body" data-content>
@@ -69,6 +69,9 @@ $.modal = function(options) {
       setTimeout(() => {
         $modal.classList.remove('hide');
         closing = false;
+        if (typeof options.onClose === 'function') {
+          options.onClose();
+        }
       }, ANIMATION_SPEED);
     },
   }
